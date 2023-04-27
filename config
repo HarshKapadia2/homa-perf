@@ -294,14 +294,7 @@ def config_power():
         # C-states are disabled, then so is Turbo mode, and that will hurt
         # peak peformance.
         print("Configuring power settings for Intel CPUs")
-        # subprocess.run(["sudo", "cpupower", "frequency-set", "-g",
-        #         "performance"], check=True)
         subprocess.run(["sudo", "apt-get", "install", "-y", "cpufrequtils"], check=True)
-        # num_processors = subprocess.run(["sudo", "echo", "$(nproc)"], check=True)
-        # print(num_processors)
-        # subprocess.check_call(["sudo", "bash", "./set-cpu-freq-scaling-gov.sh"])
-        # subprocess.run(["pwd"], check=True)
-        # subprocess.check_call(["sudo", "bash", "set-cpu-freq-scaling-gov.sh"])
         read_cpu_info()
         for num in range(len(cpu_info)):
             subprocess.run(["sudo", "cpufreq-set", "-c", "%d" % (num), "-g", "performance"], check=True)
