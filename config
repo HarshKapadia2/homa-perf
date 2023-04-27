@@ -256,7 +256,7 @@ def config_ipv6(num_hosts, vlan):
     else:
         print("Configuring IPv6:")
         subprocess.run(["sudo", "ifconfig", vlan, "add", "fd00::%d/64" % (
-                0 + 1)], check=True)
+                get_node_num() + 1)], check=True)
         subprocess.run(["sudo", "route", "-6", "add", "fd00::/16", vlan],
                 check=True)
     add_ipv6_to_etc_hosts(num_hosts)
