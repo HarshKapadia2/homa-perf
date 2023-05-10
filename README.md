@@ -2,9 +2,7 @@
 
 Comparing the performance of [Homa](https://networking.harshkapadia.me/homa) with [TCP](https://networking.harshkapadia.me/tcp).
 
-## Build Homa Linux Kernel Module
-
-### CloudLab Setup
+## CloudLab Setup
 
 -   Set up an account on [CloudLab](https://cloudlab.us), as that is the testbed on which the experiments rely heavily on.
     -   Going through [CloudLab's basic concepts](https://docs.cloudlab.us/basic-concepts.html) in its documentation is highly recommended.
@@ -47,7 +45,7 @@ Comparing the performance of [Homa](https://networking.harshkapadia.me/homa) wit
             sudo apt-get update
             ```
 
-### Build Homa Module
+## Build Homa Module
 
 -   Clone the Homa module in the home (`~`) directory.
 -   Change directories into the cloned `HomaModule` directory.
@@ -61,7 +59,7 @@ Comparing the performance of [Homa](https://networking.harshkapadia.me/homa) wit
     ./copy-homa-files.sh
     ```
 
-### Configure Homa Module
+## Configure Homa Module
 
 -   Replace the `~/bin/config` script with the script in this repository.
 
@@ -80,11 +78,17 @@ Comparing the performance of [Homa](https://networking.harshkapadia.me/homa) wit
 
 -   Repeat these steps in both `node0` and `node1` on CloudLab.
 
-### Install Homa module
+## Install Homa module
 
 -   Run the `~/HomaModule/cloudlab/bin/install` script.
 
-### Running the Experiment
+    ```shell
+    cd ~/HomaModule/cloudlab/bin
+    chmod +x install
+    install
+    ```
+
+## Running the Experiment
 
 -   On CloudLab's `node1`, run `cp_node server`.
 -   On CloudLab's `node0`, run `cp_node client`.
